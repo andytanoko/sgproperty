@@ -1,0 +1,14 @@
+<!--#if expr="! $CONTENT_LANGUAGE" --><!--#set var="CONTENT_LANGUAGE" value="en" --><!--#endif -->
+<?xml version="1.0" encoding="UTF-8"?><!--#if expr="! $CONTENT_LANGUAGE" --><!--#set var="CONTENT_LANGUAGE" value="en" --><!--#endif -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title><!--#echo encoding="none" var="REDIRECT_STATUS" --> <!--#echo encoding="none" var="TITLE" --></title></head>
+<body>
+   <h1>ASKAPACHE PRINTENV FOR <!--#echo encoding="none" var="HTTP_HOST" --></h1>
+<hr />
+<pre>
+<!--#printenv -->
+</pre>
+<hr />
+</body>
+</html>
