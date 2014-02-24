@@ -347,9 +347,7 @@ wp_reset_query();
 <?php }?>
 </div>
 
-<div id="panel_search">
-<?php property_advanced_search_form("");   ?>
-</div>
+
 <br style="clear:both" />
 </div>
 <?

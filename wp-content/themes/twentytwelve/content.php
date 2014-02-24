@@ -70,5 +70,6 @@ if (get_post_type( get_the_ID() )=='property'):
 				</div><!-- .author-info -->
 			<?php endif; ?>
 		</footer><!-- .entry-meta -->
+        
 	</article><!-- #post -->
 <?php endif; ?>

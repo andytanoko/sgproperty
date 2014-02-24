@@ -27,13 +27,14 @@ if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
 		global $wp_query;
 
 		$big = 999999999; // need an unlikely integer
-		
+		echo '<div style="clear:both;" >';
 		echo paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var('paged') ),
 			'total' => $wp_query->max_num_pages
 		) );
+		echo '</div>';
 	}
 endif;
 // Set up the content width value based on the theme's design and stylesheet.
@@ -532,3 +533,27 @@ function new_excerpt_more($more) {
 	return '. <a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
+/**
+ * If the given post is a single post, then add a class to this post.
+ *
+ * @param    array       $classes    The array of classes being rendered on a single post element.
+ * @return   array       $classes    The array of classes being rendered on a single post element.
+ * @package  example
+ * @since    1.0.0
+ */
+function add_post_class_to_single_post( $classes ) {
+ 
+	if ( is_single() ) {
+		array_push( $classes, 'single-post' );
+	}  else 
+	{
+		array_push( $classes, 'multi-post' );
+	}// end if
+ 
+	return $classes;
+ 
+}
+add_filter( 'post_class', 'add_post_class_to_single_post' );

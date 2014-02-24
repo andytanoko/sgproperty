@@ -38,7 +38,7 @@ get_header();
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-
+	      <div style="clear:both;"></div>
 		</div><!-- #content -->
 	</section><!-- #primary -->
 

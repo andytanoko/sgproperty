@@ -60,8 +60,9 @@ get_header(); ?>
 			</article><!-- #post-0 -->
 
 		<?php endif; // end have_posts() check ?>
-
+          <div style="clear:both;"></div>
 		</div><!-- #content -->
+
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
