@@ -27,7 +27,7 @@ if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
 		global $wp_query;
 
 		$big = 999999999; // need an unlikely integer
-		echo '<div style="clear:both;" >';
+		echo '<div class="page-numbers-wrapper" >';
 		echo paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
@@ -545,12 +545,17 @@ add_filter('excerpt_more', 'new_excerpt_more');
  * @since    1.0.0
  */
 function add_post_class_to_single_post( $classes ) {
+ global $wp_query;
  
 	if ( is_single() ) {
 		array_push( $classes, 'single-post' );
 	}  else 
 	{
 		array_push( $classes, 'multi-post' );
+		if( $wp_query->current_post%2 == 1 )
+		{
+			array_push( $classes, 'multi-post-right' );			
+		} 
 	}// end if
  
 	return $classes;

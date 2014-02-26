@@ -299,7 +299,7 @@ jQuery(window).load(function() {
   });
 });
 </script>
-<div id="ProPhotos"  <?php post_class(); ?> >
+<div id="ProPhotos"   >
 <div id="panel_slide">
 <div id="slider" class="flexslider">
   <ul class="slides">
