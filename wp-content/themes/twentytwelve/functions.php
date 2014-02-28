@@ -547,17 +547,19 @@ add_filter('excerpt_more', 'new_excerpt_more');
 function add_post_class_to_single_post( $classes ) {
  global $wp_query;
  
-	if ( is_single() ) {
-		array_push( $classes, 'single-post' );
-	}  else 
+	if (!is_page())
 	{
-		array_push( $classes, 'multi-post' );
-		if( $wp_query->current_post%2 == 1 )
+		if ( is_single() ) {
+			array_push( $classes, 'single-post' );
+		}  else 
 		{
-			array_push( $classes, 'multi-post-right' );			
-		} 
-	}// end if
- 
+			array_push( $classes, 'multi-post' );
+			if( $wp_query->current_post%2 == 1 )
+			{
+				array_push( $classes, 'multi-post-right' );			
+			} 
+		}// end if
+	}
 	return $classes;
  
 }
