@@ -313,7 +313,9 @@ jQuery(window).load(function() {
     <li>
       <?php $property_imgs = get_property_images_ids(); 
 	  		$arr_property_imgs [] = $property_imgs['property_image1'];
-                echo wp_get_attachment_image($property_imgs['property_image1'], 'full'); 
+			$image_attributes = wp_get_attachment_image_src( $property_imgs['property_image1'], 'full');
+			echo '<img src='.plugins_url('timthumb.php',__FILE__).'?src='.$image_attributes[0].'&a=c&h=300&w=1200">';
+               // echo wp_get_attachment_image($property_imgs['property_image1'] , 'full'); 
             ?>
       <div class="flex-caption">
         <h1><a href="<?php echo get_permalink( $ID ); ?>">
@@ -339,7 +341,11 @@ wp_reset_query();
        foreach ($arr_property_imgs as $img) {
         ?>
     <li>
-      <?php echo wp_get_attachment_image($img, 'thumbnail');?>
+      <?php
+	  		$image_attributes = wp_get_attachment_image_src( $img, 'full');
+			echo '<img src="'.plugins_url('timthumb.php',__FILE__).'?src='.$image_attributes[0].'&h=150&w=150">';
+	    //echo wp_get_attachment_image($img, 'thumbnail');
+		?>
     </li>
     <?php   }	?>
   </ul>

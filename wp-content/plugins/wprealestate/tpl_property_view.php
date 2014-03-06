@@ -188,7 +188,11 @@ google.maps.event.addDomListener(window, 'load', initializeGoogleMap);
 
           <?php foreach ($property_imgs as $img_id) { ?>
 
-          <li> <?php echo wp_get_attachment_image($img_id, 'full'); ?> </li>
+          <li> <?php 
+		  //echo wp_get_attachment_image($img_id, 'full'); 
+		  	$image_attributes = wp_get_attachment_image_src( $img_id, 'full');
+			echo '<img src="'.plugins_url('timthumb.php',__FILE__).'?src='.$image_attributes[0].'&a=c&h=400&w=1200">';
+		  ?> </li>
 
           <?php } ?>
 
@@ -212,7 +216,10 @@ google.maps.event.addDomListener(window, 'load', initializeGoogleMap);
 
 	foreach ($property_imgs as $img_id) { ?>
 
-          <li> <?php echo wp_get_attachment_image($img_id); ?> </li>
+          <li> <?php //echo wp_get_attachment_image($img_id); 
+			  	$image_attributes = wp_get_attachment_image_src( $img_id, 'full');
+				echo '<img src="'.plugins_url('timthumb.php',__FILE__).'?src='.$image_attributes[0].'&h=150&w=150">';
+		  ?> </li>
 
           <?php } ?>
 

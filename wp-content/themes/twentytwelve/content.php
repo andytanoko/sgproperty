@@ -20,13 +20,15 @@ if (get_post_type( get_the_ID() )=='property'):
 		</div>
 		<?php endif; ?>
 		<header class="entry-header">
-			<?php the_post_thumbnail(); ?>
+			
 			<?php if ( is_single() ) : ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+                <?php the_post_thumbnail(); ?>
 			<?php else : ?>
-			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h1>
+                <h1 class="entry-title">
+                    <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                </h1>
+                <?php the_post_thumbnail(); ?>
 			<?php endif; // is_single() ?>
 			<?php if ( comments_open() ) : ?>
 				<div class="comments-link">

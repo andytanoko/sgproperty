@@ -191,21 +191,24 @@
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 250px;
-	background: rgba(0, 0, 0, 0.9);
+	top: 0px;
+	background: rgba(0, 0, 0, 0.7);
 	z-index: 1;
 	padding: 10px;
 	color: #fff;
-	width: 70%;
+	width: 50%;
 	overflow: hidden;
 	line-height: 1.1em;
+	height:100%;
 }
 .flex-caption h1 {
-	line-height: 1.2em;
+	line-height: 1.5em;
+	font-size:1.2em;
 }
 .flex-caption p {
 	padding: 5px;
-	font-size: 0.8em;
+	font-size: 0.9em;
+	line-height: 1.5em;
 	text-align: justify;
 }
 #panel_search {
@@ -224,5 +227,8 @@
 		width:75%;
 		float:left;*/
 		display:block;
+		}
+		.flex-caption {
+			width:30%;
 		}
 }
